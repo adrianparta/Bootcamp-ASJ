@@ -205,8 +205,12 @@ else{
 }
  */
 
+
+
 //FOR//
 
+/* 
+//Ejercicio 1
 let msj = "";
 
 let num = parseInt(prompt("Ingrese un numero:"));
@@ -228,3 +232,16 @@ for (let i = num-1; i>=0; i--) {
 }
 
 alert(msj);
+ */
+
+
+
+//Ejercicio 2 -- Factorial
+
+let num = parseInt(prompt("Ingrese un numero:"));
+let factorial = num;
+for(num;num>=2;num--){
+    factorial *= num -1;
+}
+
+alert(factorial);
