@@ -235,13 +235,43 @@ alert(msj);
  */
 
 
-
+/* 
 //Ejercicio 2 -- Factorial
 
 let num = parseInt(prompt("Ingrese un numero:"));
-let factorial = num;
-for(num;num>=2;num--){
-    factorial *= num -1;
+if(num>0){
+    let factorial = num;
+    for(num;num>=3;num--){
+        factorial *= num-1;
+    }   
+    alert(factorial);
 }
+else if(num<0){
+    alert("debe ingresar un numero mayor a 0");
+}
+else{
+    alert("1");
+}
+ */
 
-alert(factorial);
+
+let msj = "";
+let msj2 = "";
+
+let num = parseInt(prompt("Ingrese un numero:"));
+for (let i = 1, j = num-1; i<=num; i++, j--) {
+    let a = 0;
+    while(a<i){
+        msj += "*";
+        a++;
+    }
+    msj += "\n";
+
+    let w= j;
+    while(w>0){
+        msj2 += "*";
+        w--;
+    }
+    msj2 +="\n";
+}
+alert(msj+msj2);
