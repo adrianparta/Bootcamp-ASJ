@@ -76,6 +76,7 @@ switch(valoracion){
 
 //WHILE
 
+/* 
 //ejercicio 1
 // Que ingrese un numero, y en base a dicho numero, sumatoria de todos los numeros HASTA ese numero.
 // Mostrar promedio
@@ -95,6 +96,7 @@ if(!Number.isNaN(a)){
 else{
     alert("incorrecto");
 }
+ */
 
 
 /* 
@@ -111,3 +113,100 @@ while(num > 0){
 
 alert(`usted ingresó ${i} numero/s positivo/s`);
  */
+
+/* 
+//FIZZBUZZ
+
+let num = 1;
+let flag;
+while(num <= 100){
+    flag = 0;
+    
+    if(num %3 == 0 && num%5 != 0 && flag == 0){
+        console.log("Fizz");
+        flag++;
+    }
+    
+    if (num %5 == 0 && num%3 != 0 && flag == 0){
+        console.log("Buzz");
+        flag++;
+    }
+
+    if (num %3 == 0 && num%5 == 0 && flag == 0){
+        console.log("FizzBuzz");
+        flag++;
+    }
+
+    if(flag == 0){
+        console.log(num);
+    }
+    num++;
+}
+ */
+
+
+//Ejercicio bar
+
+let pedir = true;
+alert("Buenos días, bienvenido al bar.");
+let opcion;
+let total = 0;
+let chiste = false;
+do {
+    opcion = Number(prompt("¿Qué desea ordenar?\nIndique una opción:\n1-Medialuna con jyq\n2-Tostados de miga\n3-Sanguche de milanesa\n4-Jugo de naranja\n6-Más opciones"));
+
+    switch(opcion){
+        
+        case 1:
+            total +=500;
+        break;
+
+        case 2:
+            total +=550;
+        break;
+
+        case 3:
+            total +=1400;
+        break;
+
+        case 4:
+            total +=450;
+        break;
+        
+        case 6:
+            let opcion2 = Number(prompt("1-Contar un chiste\n2-Solicitar cuenta"));
+            switch(opcion2){
+                case 1:
+                    if(chiste){
+                        alert("-Mamá mamá en la escuela me dicen alfajor\n¿Por qué Jorgito?");
+                        chiste = false;
+                    }
+                    else{
+                        alert("¿Qué le dice una piedra a otra?\nNada porque las piedras no hablan xd");
+                        chiste = true;
+                    }
+                break;
+                
+                case 2: 
+                    pedir = false;
+                break;
+
+                default:
+                    alert("Opcion invalida");
+                    break;
+            }  
+        break;
+                        
+        default:
+            alert("Ingrese un valor valido.");
+        break;
+    }
+} while (pedir);
+
+if(total>0){
+    total += (Number(prompt("Antes de traer la cuenta, ¿desea dejar propina? Si la respuesta es si, indique el porcentaje, si la respuesta es no, indique 0"))*total)/100;
+    alert(`El total de su cuenta es $${total}\n Muchas gracias por elegirnos, vuelva pronto!`);
+}
+else{
+    alert("No ha comprado nada, muchas gracias de todas formas.");
+}
