@@ -118,33 +118,26 @@ alert(`usted ingresó ${i} numero/s positivo/s`);
 //FIZZBUZZ
 
 let num = 1;
-let flag;
+
+console.log(num%3);
 while(num <= 100){
-    flag = 0;
-    
-    if(num %3 == 0 && num%5 != 0 && flag == 0){
-        console.log("Fizz");
-        flag++;
-    }
-    
-    if (num %5 == 0 && num%3 != 0 && flag == 0){
-        console.log("Buzz");
-        flag++;
-    }
-
-    if (num %3 == 0 && num%5 == 0 && flag == 0){
+    if (!Boolean(num%3) && !Boolean(num%5)){
         console.log("FizzBuzz");
-        flag++;
     }
-
-    if(flag == 0){
+    else if(!Boolean(num%3)){
+        console.log("Fizz");
+    }
+    else if(!Boolean(num %5)){
+        console.log("Buzz");
+    }
+    else{
         console.log(num);
     }
     num++;
 }
  */
 
-
+/* 
 //Ejercicio bar
 
 let pedir = true;
@@ -210,3 +203,28 @@ if(total>0){
 else{
     alert("No ha comprado nada, muchas gracias de todas formas.");
 }
+ */
+
+//FOR//
+
+let msj = "";
+
+let num = parseInt(prompt("Ingrese un numero:"));
+for (let i = 1; i<=num; i++) {
+    let a = 0;
+    while(a<i){
+        msj += "*";
+        a++;
+    }
+    msj += "\n";
+}
+for (let i = num-1; i>=0; i--) {
+    let a = i;
+    while(a>0){
+        msj += "*";
+        a--;
+    }
+    msj += "\n";
+}
+
+alert(msj);
