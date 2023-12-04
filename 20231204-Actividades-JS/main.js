@@ -1,4 +1,4 @@
-/*
+/* 
 //Par impar switch
 const num = parseInt(prompt("ingrese un número"));
 
@@ -15,7 +15,7 @@ switch(num%2){
         alert("ingrese un numero valido");
     break;
 }
-*/
+ */
 
 /*
 //ejercicio 1
@@ -44,7 +44,7 @@ switch(text){
 }
 */
 
-//Ejercicio 2 switch
+/* //Ejercicio 2 switch
 const valoracion = prompt("valore la pelicula");
 const gracias = "Gracias por su visita."
 
@@ -72,4 +72,42 @@ switch(valoracion){
     default:
         alert("ingrese un texto valido");
     break;
+} */
+
+//WHILE
+
+//ejercicio 1
+// Que ingrese un numero, y en base a dicho numero, sumatoria de todos los numeros HASTA ese numero.
+// Mostrar promedio
+
+const a = Number(prompt("Ingrese un número:"));
+
+console.log(a);
+let b = 0;
+let i = 0;
+if(!Number.isNaN(a)){
+    while(i < a){
+        b += i+1;
+        i++;
+    }
+    alert(`la sumatoria es ${b}, y el promedio es ${b/i}`);
 }
+else{
+    alert("incorrecto");
+}
+
+
+/* 
+//ejercicio 2
+// En este ejercicio deberás crear un programa que le pida al usuario que ingrese un número entero. El programa terminará cuando se ingrese un número negativo.
+// Al terminar, mostrarle un mensaje con la cantidad de números positivos que ingresó.
+
+let num = parseInt(prompt("ingrese un numero entero:"));
+let i = 0;
+while(num > 0){
+    i++;
+    num = prompt("ingrese otro numero:");
+}
+
+alert(`usted ingresó ${i} numero/s positivo/s`);
+ */
