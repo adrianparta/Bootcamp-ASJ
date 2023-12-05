@@ -1,3 +1,6 @@
+/* 
+//funciones
+
 const saludar = alert("Buenos días, bienvenido al bar.");
 let pedir = true;
 let opcion;
@@ -75,3 +78,31 @@ if(total>0){
 else{
     alert("No ha comprado nada, muchas gracias de todas formas.");
 }
+ */
+
+
+//fibonacci
+//sin recursividad
+let n = parseInt(prompt("Ingrese un número"));
+
+/*
+let x = [1,1];
+ const fibonacci = (num) => {
+    for (let i = 2; i < num; i++) {
+        let ultimo = x[i-1];
+        let anteultimo = x[i-2];
+        x.push(ultimo+anteultimo);
+    }
+    return x;
+}; */
+//console.log(fibonacci(num));
+
+//con recursividad
+//(SOLO MUESTRA EL NUMERO, NO EL ARRAY)
+const fibonacci2 = n => {
+    if(n<2) return n;
+    return fibonacci2(n-1) + fibonacci2 (n-2);
+};
+
+console.log(fibonacci2(n));
+
