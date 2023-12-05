@@ -105,4 +105,3 @@ const fibonacci2 = n => {
 };
 
 console.log(fibonacci2(n));
-
