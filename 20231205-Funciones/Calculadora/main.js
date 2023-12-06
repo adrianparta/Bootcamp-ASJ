@@ -113,8 +113,8 @@ btnPorcentaje.addEventListener("click", () => {
 
 btnIgual.addEventListener("click", () => {
     texto.innerHTML = "";
-    param1 = parseInt(param1);
-    param2 = parseInt(param2);
+    param1 = parseFloat(param1);
+    param2 = parseFloat(param2);
     
     console.log(param1,param2);
 
