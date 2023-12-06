@@ -154,9 +154,9 @@ btnIgual.addEventListener("click", () => {
             if(param2 === ""){
                 param2 = 1;
             }
-            const valor = (param2==0) ? "No se puede dividir por 0" : (param1/param2);
+            const valor = (param2==0) ? "Error" : (param1/param2);
             texto.innerHTML = valor;
-            if(texto.innerHTML != "No se puede dividir por 0"){
+            if(texto.innerHTML != "Error"){
                 param1 = texto.innerHTML;
             }
             else{
