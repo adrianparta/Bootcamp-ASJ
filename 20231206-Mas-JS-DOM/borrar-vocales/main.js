@@ -6,10 +6,10 @@ input.addEventListener("keyup", () => {
 
 
     //CON REGEX
-    texto.innerHTML = input.value.replace(/[aeiouáéíóú]/ig, "_");
+    texto.innerHTML = input.value.replace(/[aeiouáéíóúü]/ig, "_");
     /*
     //SIN REGEX
-     let arrayTexto = (input.value).split("");
+    let arrayTexto = (input.value).split("");
     let nuevo_input = arrayTexto.map(element => {
         if(vocales.includes(element)){
             return "_";
