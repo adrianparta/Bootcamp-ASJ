@@ -25,7 +25,6 @@ function redireccionar(obj){
 };
 
 function cargarCarrito(){
-    console.log(localStorage.getItem("carrito") === null);
     aux = (localStorage.getItem("carrito") === null) ? [] : JSON.parse(localStorage.getItem("carrito"));
 
     aux.push(

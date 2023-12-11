@@ -1,0 +1,57 @@
+#h1 {
+    text-align: center; 
+    color: white; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.square {
+    float: left;
+    width: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    background-color: white;
+    margin: 1.66%;
+    border-radius: 15pt;
+    transition-duration: 0.6s;
+}
+
+.container {
+    max-width: 600px;
+}
+
+#stripe {
+    background-color: white;
+    height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.selected {
+    background-color: tomato;
+}
+
+button{
+    background-color: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    height: 100%;
+    outline: none;
+    border: none;
+    transition: all 0.4s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif  }
+
+button:hover{
+    color: white;
+    background: yellowgreen
+}
+
+#message{
+    display: inline-block;
+    width: 15%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black; 
+}
+
