@@ -1,0 +1,13 @@
+main{
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+add{
+    padding: 0;
+}
