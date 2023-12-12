@@ -9,11 +9,14 @@ descripcion = document.getElementById("descripcion");
 
 
 function cargarCiudad(input){
-fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input +"&appid=1a9b3670ada3ece0551373f7325e028d")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input +"&appid=fdd533266e28101881f610f2b8f1ebe1")
     .then((response) => response.json())
     .then((json) =>{
-        console.log(json);
+        ciudad.innerHTML = json.name;
         descripcion.innerHTML = json.weather[0].description;
+        temperatura.innerHTML = (parseFloat(json.main.temp) - 273.15).toFixed(1);
+        grados.innerHTML = "<sup>°C</sup>"
+        wicon.setAttribute("src", `https://openweathermap.org/img/wn/${json.weather[0].icon}@2x.png`);
         document.querySelector(".container").style.visibility = "visible"
     })
     .catch((error) =>{
