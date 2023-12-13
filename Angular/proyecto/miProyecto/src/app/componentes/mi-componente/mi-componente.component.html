@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="card" style="width: 18rem;" *ngFor="let prod of productos">
+    <div class="card bg-dark-subtle gy-4 m-3 p-2" style="width: 18rem;" *ngFor="let prod of productos">
         <img src="{{prod.imagen}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{prod.nombre}}</h5>
-          <p class="card-text">prod.descripcion</p>
+          <p class="card-text">{{prod.descripcion}}</p>
           <a href="#" class="btn btn-primary">boton</a>
         </div>
       </div>
