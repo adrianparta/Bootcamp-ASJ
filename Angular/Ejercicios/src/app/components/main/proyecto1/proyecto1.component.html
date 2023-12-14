@@ -1,0 +1,27 @@
+<div class="d-flex flex-column align-items-center mt-4 justify-content-center ">
+    <div>
+        <h2>Filtro</h2>
+        <button (isCompletedArray)="todas()">Todas</button>
+        <button (isCompletedArray)="completas()">Completas</button>
+        <button (isCompletedArray)="incompletas()">Incompletas</button>
+        <button (isCompletedArray)="eliminadas()">Eliminadas</button>
+    </div>
+    <h1>TODO List</h1>
+    <input class="input-group-text " type="text" [(ngModel)]="item.nombre" (keyup.enter)="agregar()">
+    <ul class="list-group ">
+        <li  *ngFor="let item of tareas; let i=index" class="list-group-item align-items-center" [ngClass]="(isCompletedArray[i]===true)?'completas':'incompletas'">
+            <label [ngClass]="(isCompletedArray[i] === true)?'text-decoration-line-through':''" class="fs-2">{{item}}</label>
+            <button class="btn btn-outline-danger btn-sm mx-2" (isCompletedArray)="borrar(i)">
+                <img width="25" height="25" src="https://img.icons8.com/windows/32/trash.png" alt="trash"/>
+            </button>
+            <button class="btn btn-outline-primary" (isCompletedArray)="completar(i)">Completar</button>
+        </li>
+    </ul>
+
+    <ul class="list-group " *ngIf="filtro === 'eliminada'">
+        <li *ngFor="let item of eliminadasArray; let v=index" class="list-group-item align-items-center">
+                <label class="fs-2">{{item}}</label>
+                <button class="btn btn-outline-primary" (isCompletedArray)="completar(v)">Completar</button>
+        </li>
+    </ul>
+</div>
