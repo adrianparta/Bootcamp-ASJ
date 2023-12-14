@@ -1,0 +1,12 @@
+img{
+    aspect-ratio: 1/1;
+    width: 100px;
+    object-fit: cover;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    max-width: 100px;
+}
+
+td{
+    vertical-align: middle;
+}

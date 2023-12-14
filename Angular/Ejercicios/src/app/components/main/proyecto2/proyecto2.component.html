@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-6 d-flex flex-column border-end vh-100">
+        <h1 class="mt-4 align-self-center ">Formulario</h1>
+        <div class="input-group p-4">
+            <span class="input-group-text" id="addon-wrapping">Nombre</span>
+            <input class="form-control" type="text" [(ngModel)]="nombrePersonaje">
+        </div>
+        <div class="input-group p-4 ">
+            <span class="input-group-text" id="addon-wrapping">URL</span>
+            <input class="form-control " type="text" [(ngModel)]="urlPersonaje">
+        </div>
+        <div class="input-group p-4 ">
+            <span class="input-group-text" id="addon-wrapping">Profesión</span>
+            <input class="form-control" type="text" [(ngModel)]="profesionPersonaje">
+        </div>
+        <button class="m-4 btn btn-warning " (click)="agregar()">Agregar</button>
+    </div>
+    <div class="col-6 d-flex flex-column px-4">
+        <h2 class="h1 m-4 align-self-center ">Tabla</h2>
+        <table class="table table-striped rounded-4">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Profesión</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let personaje of listaPersonajes">
+                    <td><img class="img-fluid" [src]="personaje.urlPersonaje" alt=""></td>
+                    <td>{{personaje.nombrePersonaje}}</td>
+                    <td>{{personaje.profesionPersonaje}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
