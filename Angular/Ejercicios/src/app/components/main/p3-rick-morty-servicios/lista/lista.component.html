@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personaje of personajes">
+        <td>{{personaje.name}}</td>
+        <td>{{personaje.gender}}</td>
+        <td><img src={{personaje.image}} alt=""></td>
+        <td><button class="btn btn-primary" routerLink="detalle/{{personaje.id}}">Detalle</button></td>
+      </tr>
+    </tbody>
+  </table>
