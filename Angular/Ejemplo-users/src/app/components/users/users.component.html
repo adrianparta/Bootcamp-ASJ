@@ -1,0 +1,28 @@
+<div class="row mt-4 gx-5">
+    <div class="col">
+        <h3>Lista de Usuarios</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>email</th>
+                    <th>first-name</th>
+                    <th>Avatar</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td><img src="{{user.avatar}}" alt="{{user.first_name}}" width="70px"></td>
+                    <td>    
+                        <button class="btn btn-info btn-sm" routerLink="/user/{{user.id}}">Modificar</button>
+                        <button class="btn btn-danger btn-sm" (click)="delete(user.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

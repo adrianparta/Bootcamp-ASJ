@@ -1,0 +1,25 @@
+<div class="col-5">
+    <h3>Nuevo Usuario</h3>
+    <form #miForm="ngForm" (ngSubmit)="create(miForm)">
+        <input type="hidden" name="id" [(ngModel)]="userService.datosUsuario.id">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" name="name" [(ngModel)]="userService.datosUsuario.name" required minlength="4" #name="ngModel">
+            <div *ngIf="name.errors?.['minlength']" class="col-auto">
+                <span class="form-text">Debe tener al menos 4 caracteres</span>
+            </div>
+            <div *ngIf="name.errors?.['required']" class="col-auto">
+                <span class="form-text text-danger">El dato es obligatorio</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Trabajo</label>
+            <input type="text" class="form-control" placeholder="Trabajo" name="job" [(ngModel)]="userService.datosUsuario.job">
+        </div>
+        <button type="submit" class="btn btn-outline-success me-2" [disabled]="!miForm.valid">Guardar</button>
+        <button class="btn btn-outline-warning ">Limpiar</button>
+    </form>
+    <div *ngIf="mensaje" class="alert alert-success mt-4" role="alert">
+        {{mensaje}}
+    </div>
+</div>
