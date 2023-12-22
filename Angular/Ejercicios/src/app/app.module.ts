@@ -15,6 +15,8 @@ import { Proyecto2Component } from './components/main/proyecto2/proyecto2.compon
 import { P3RickMortyServiciosComponent } from './components/main/p3-rick-morty-servicios/p3-rick-morty-servicios.component';
 import { ListaComponent } from './components/main/p3-rick-morty-servicios/lista/lista.component';
 import { DetalleComponent } from './components/main/p3-rick-morty-servicios/detalle/detalle.component';
+import { PrimosPipe } from './pipes/primos.pipe';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DetalleComponent } from './components/main/p3-rick-morty-servicios/deta
     Proyecto2Component,
     P3RickMortyServiciosComponent,
     ListaComponent,
-    DetalleComponent
+    DetalleComponent,
+    PrimosPipe,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
