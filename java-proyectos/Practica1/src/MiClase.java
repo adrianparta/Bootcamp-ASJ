@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class MiClase {
 
+	
 	public static void main(String[] args) {
 //		System.out.println("Hola Mundo");
 //		System.out.println("short: " + Short.MIN_VALUE + " " + Integer.MAX_VALUE);
