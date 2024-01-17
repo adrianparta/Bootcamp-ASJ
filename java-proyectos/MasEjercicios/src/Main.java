@@ -13,19 +13,19 @@ public class Main {
 
 				Scanner scanner = new Scanner(System.in);
 				int[] array = new int[15];
-				int[] arrayAux = new int[15];
 				System.out.println("ingrese 15 numeros:");
-				for(int i = 0, j = 14; i<15; i++, j--) {
+				for(int i = 0; i<15; i++) {
 					System.out.println("n°" + (i+1) + ": ");
 					array[i] = scanner.nextInt();
-					arrayAux[j] = array[i];
 				}
 				
-				array = arrayAux;
-				System.out.println("Array invertido:");
-				for(int i=0;i<15;i++) {
-					System.out.println(array[i]);
+				
+				System.out.println("Array modificado:");
+				System.out.println(array[14]);
+				for(int i=1;i<15;i++) {
+					System.out.println(array[i-1]);
 				}
+				
 				scanner.close();
 	}
 	public static void ejercicio3() {
