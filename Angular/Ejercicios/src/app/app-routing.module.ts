@@ -5,7 +5,6 @@ import { Proyecto1Component } from './components/main/proyecto1/proyecto1.compon
 import { Proyecto2Component } from './components/main/proyecto2/proyecto2.component';
 import { P3RickMortyServiciosComponent } from './components/main/p3-rick-morty-servicios/p3-rick-morty-servicios.component';
 import { DetalleComponent } from './components/main/p3-rick-morty-servicios/detalle/detalle.component';
-import { PipesComponent } from './components/pipes/pipes.component';
 
 const routes: Routes = [
   {path: 'proyecto1', component: Proyecto1Component},
@@ -17,8 +16,7 @@ const routes: Routes = [
       {path: '', component: P3RickMortyServiciosComponent},
       {path: 'detalle/:id', component: DetalleComponent}
     ]
-  },
-  {path: 'pipes', component: PipesComponent},
+  }
 ];
 
 @NgModule({

@@ -1,20 +1,21 @@
 <div class="d-flex flex-column align-items-center mt-4 justify-content-center ">
-    <div>
+    <div class="text-center ">
         <h2>Filtro</h2>
-        <button (click)="todas()">Todas</button>
-        <button (click)="completas()">Completas</button>
-        <button (click)="incompletas()">Incompletas</button>
-        <button (click)="eliminadas()">Eliminadas</button>
+        <button class="btn m-2" [ngClass]="{'btn-primary': filtro == 'todas', 'btn-outline-primary': filtro !== 'todas'}" (click)="todas()">Todas</button>
+        <button class="btn m-2" [ngClass]="{'btn-primary': filtro == 'completas', 'btn-outline-primary': filtro !== 'completas'}" (click)="completas()">Completas</button>
+        <button class="btn m-2" [ngClass]="{'btn-primary': filtro == 'incompletas', 'btn-outline-primary': filtro !== 'incompletas'}" (click)="incompletas()">Incompletas</button>
     </div>
     <h1>TODO List</h1>
     <input class="input-group-text " type="text" [(ngModel)]="item.nombre" (keyup.enter)="agregar()">
-    <ul class="list-group ">
-        <li  *ngFor="let item of tareas" class="list-group-item align-items-center">
-            <label class="fs-2">{{item.nombre}}</label>
-            <button class="btn btn-outline-danger btn-sm mx-2" (click)="borrar(item.id)">
-                <img width="25" height="25" src="https://img.icons8.com/windows/32/trash.png" alt="trash"/>
+    <ul class="list-group mt-3 ">
+        <li  *ngFor="let item of tareasAux" class="list-group-item align-items-center d-flex flex-row ">
+            <input type="text" class="fs-2 form-control" [ngClass]="{'text-decoration-line-through': !item.estado}"  [(ngModel)]="item.nombre" (keyup.enter)="modificar(item)">
+            <button class="btn btn-outline-danger btn-lg mx-2" (click)="borrar(item.id)">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/trash--v1.png" alt="trash--v1"/>
             </button>
-            <button class="btn btn-outline-primary" (click)="completar(item.id)">Completar</button>
+            <button class="btn btn-outline-primary btn-lg" (click)="completar(item)">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/checkmark--v1.png" alt="checkmark--v1"/>
+            </button>
         </li>
     </ul>
 

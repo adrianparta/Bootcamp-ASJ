@@ -16,16 +16,17 @@ export class TodoServiceService {
     return this.http.get<Tarea[]>(this.url);
   }
 
-  addTarea(tarea: Tarea): Observable<HttpResponse<any>>{
-    return this.http.post(this.url, tarea, { observe: 'response', responseType: 'text' as 'json'  });
+  addTarea(tarea: Tarea): Observable<any>{
+    return this.http.post(this.url, tarea, { responseType: 'text' });
+  }
+  
+  updateTarea(tarea: Tarea): Observable<any>{
+    
+    return this.http.put(this.url + '/' + tarea.id, tarea, { responseType: 'text' });
   }
 
-  updateTarea(tarea: Tarea): Observable<string>{
-    return this.http.put<string>(this.url + '/', tarea);
-  }
-
-  deleteTarea(id: number): Observable<string>{
-    return this.http.delete<string>(this.url + "/" + id);
+  deleteTarea(id: number): Observable<any>{
+    return this.http.delete(this.url + "/" + id, { responseType: 'text' });
   }
 
 }

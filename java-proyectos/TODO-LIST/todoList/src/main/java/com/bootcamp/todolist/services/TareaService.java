@@ -38,6 +38,7 @@ public class TareaService {
 		if(t != null) {
 			t.setNombre(tarea.getNombre());
 			t.setDescripcion(tarea.getDescripcion());
+			t.setEstado(tarea.isEstado());
 			tareaRepository.save(t);
 			return "Tarea #" + id + "modificada correctamente";
 		}

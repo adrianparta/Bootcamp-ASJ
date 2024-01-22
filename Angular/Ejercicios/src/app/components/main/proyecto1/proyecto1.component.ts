@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tarea } from './model/tarea';
 import { TodoServiceService } from './services/todo-service.service';
 
+
 @Component({
   selector: 'app-proyecto1',
   templateUrl: './proyecto1.component.html',
@@ -12,28 +13,29 @@ export class Proyecto1Component implements OnInit{
   constructor(public serv: TodoServiceService) {}
 
   item: Tarea = {
+    id: 0,
     nombre: "",
     descripcion: "",
     estado: true
   }
-
+  filtro = "todas";
   tareas!: Tarea[];
-  filtro: string = "todas";
+  tareasAux: Tarea[] = [];
 
   ngOnInit(): void {
     this.obtenerTareas();
+      this.tareasAux = this.tareas;
   }
 
   obtenerTareas(){
     this.serv.getTareas().subscribe((data:any)=>{
       this.tareas = data;
-    });
+      this.tareasAux = this.tareas;
+    });    
   }
 
   agregar(){
     this.serv.addTarea(this.item).subscribe(()=>{
-      console.log("pase por aca");
-      
       this.obtenerTareas();
     });
     this.item.nombre = "";
@@ -46,31 +48,34 @@ export class Proyecto1Component implements OnInit{
       });
     }
   }
-  completar(i: number | undefined){
-    console.log(this.tareas);
-    
-    if(i !== undefined){
-    this.item = this.tareas.splice(i,1)[0];
-    this.tareas.push(this.item);
-    }
+
+  modificar(item: Tarea){    
+      this.serv.updateTarea(item).subscribe(()=>{    
+        this.obtenerTareas();        
+      });
+  }
+
+  completar(item: Tarea){
+    item.estado = false;
+    this.serv.updateTarea(item).subscribe(()=>{    
+      this.obtenerTareas();        
+    });
   }
 
 
   todas(){
     this.filtro = "todas";
+    this.tareasAux = this.tareas;
   }
 
   completas(){
-    this.filtro = "completa";
+    this.filtro = "completas";
+    this.tareasAux = this.tareas.filter((tarea)=> tarea.estado === false);
   }
 
   incompletas(){
-    this.filtro = "incompleta"; 
-  }
-
-  eliminadas(){
-    this.filtro = "eliminada"
-    console.log("pase");
+    this.filtro = "incompletas";
+    this.tareasAux = this.tareas.filter((tarea)=> tarea.estado === true);
   }
 }
 
