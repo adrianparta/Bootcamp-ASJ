@@ -7,6 +7,7 @@ import com.bootcamp.todolist.models.TareaModel;
 import com.bootcamp.todolist.services.TareaService;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,22 +40,22 @@ public class TareaController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<TareaModel> getTareaById(@PathVariable Integer id) {
-		return ResponseEntity.ok(null);
+	public ResponseEntity<Optional<TareaModel>> getTareaById(@PathVariable Integer id) {
+		return ResponseEntity.ok(tareaService.obtenerTareaPorId(id));
 	}
 	
 	@PostMapping()
 	public ResponseEntity<String> createTarea(@RequestBody TareaModel tarea) {
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(tareaService.crearTarea(tarea));
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<String> modifyTarea(@PathVariable Integer id, @RequestBody TareaModel tarea) {		
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(tareaService.modificarTarea(id, tarea));
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteTarea(@PathVariable Integer id) {
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(tareaService.eliminarTarea(id));
 	}
 }
