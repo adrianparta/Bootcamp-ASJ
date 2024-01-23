@@ -1,0 +1,39 @@
+<div class="row">
+
+    <h2 class="text-truncate font-monospace text-uppercase mt-2 mb-0">Detalle: </h2>
+    <hr>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="videos">Videos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Detalle</li>
+    </ol>
+
+    <div class="col-8">        
+        <iframe width="100%" height="415" [src]="safeUrl" title="{{video.title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <h3>{{video.title | uppercase}}</h3>
+        <h5 class="text-primary ">{{video.category}}</h5>
+        <p *ngIf="video.description"><strong>Descripcion:</strong> {{video.description}}</p>
+    </div>
+    <div class="col-4">
+        <button type="button" class="btn btn-primary mx-1" (click)="onLike()">
+            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/facebook-like.png" alt="facebook-like"/>
+            <span class="badge text-bg-secondary ms-2">
+                {{video.amountLike}}
+            </span>
+        </button>
+        <button type="button" class="btn btn-danger mx-1" (click)="onDislike()">
+            <img style="transform: scaleY(-1);" width="25" height="25" src="https://img.icons8.com/ios-filled/50/facebook-like.png" alt="facebook-like"/>
+            <span class="badge text-bg-secondary ms-2">
+                {{video.amountDislike}}
+            </span>
+        </button>
+        <p class="col-6"><strong>Cant. Vistas: </strong> {{video.views}}</p>
+        <span class="row d-flex flex-row align-items-center ">
+            <label class="col-1" *ngFor="let item of stars; let i = index">
+                <img *ngIf="!(selectedStar>=(i+1))" (click)="onValoration(i)" width="30" height="30" class="mx-1" src="https://img.icons8.com/ios/50/star--v1.png" alt="star--v1"/>
+                <img *ngIf="selectedStar>=(i+1)" class="mx-1" width="30" height="30" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
+            </label>
+            <label class="col mx-2 fs-1">{{video.avgValoration | number:'1.1-1'}}</label>
+        </span>
+    </div>
+</div>

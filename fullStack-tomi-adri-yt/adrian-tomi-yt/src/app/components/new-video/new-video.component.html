@@ -1,0 +1,37 @@
+<form #miForm="ngForm" action="" (ngSubmit)="addVideo(miForm)">
+    <h2 class="text-truncate font-monospace text-uppercase mt-2 mb-0">Agregar un video: </h2>
+    <hr>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="videos">Videos</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Agregar</li>
+    </ol>
+    <div class="row px-4 py-2">
+        <div class="col-6">
+            <div class="form-floating  mb-2">                
+                <input required class="form-control border-1" [(ngModel)]="video.url" name="url" type="url" placeholder="" >
+                <label for="url">Url: </label>
+            </div>
+            <div class="form-floating mb-2">
+                <select required class="form-control border-1" [(ngModel)]="video.category" name="category">                
+                    <option value="comedia">Comedia</option>
+                    <option value="musica">Musica</option>
+                    <option value="turismo">Turismo</option>
+                    <option value="gamer">Gamer</option>
+                    <option value="comida">Comida</option>
+                </select> 
+                <label for="url">Categoria: </label>
+            </div>                  
+        </div>
+        <div class="col-6">
+            <div class="form-floating mb-2">
+                <input required class="form-control border-1" [(ngModel)]="video.title" name="title" type="text" placeholder="">
+                <label for="title">Titulo:</label>
+            </div>  
+            <div class="form-floating mb-2">
+                <textarea class="form-control border-1"  [(ngModel)]="video.description" name="description" cols="60" rows="2"></textarea>
+                <label for="description">Descripcion: </label>
+            </div>
+        </div>
+        <button class="btn btn-outline-primary border-1 my-3" type="submit">Agregar</button>
+    </div>    
+</form> 
